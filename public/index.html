@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+  <title>Ada Quotes API</title>
+  <link rel='stylesheet' type='text/css' href='static/styles/reset.css'>
+  <link rel='stylesheet' type='text/css' href='static/styles/style.css'>
+</head>
+<body>
+    <main class="page-content" aria-label="Content">
+       <div class="wrapper">
+         <article class="post">
+     <div class="post-content">
+    <h1 id="ada-quotes-api">Ada Quotes API</h1>
+
+<p>This is a REST-ful API that serves the favorite quotes of WDI Ada, a General Assembly Web Development Immersive course in NYC.</p>
+
+<p>No keys are needed to access this API.</p>
+
+<h2 id="endpoints">Endpoints</h2>
+
+<p>The API has two main endpoints: <code class="highlighter-rouge">/api/quotes</code> and <code class="highlighter-rouge">/api/categories</code>. Here are some sample calls from each and their responses.</p>
+
+<h3 id="get-endpoints"><code class="highlighter-rouge">GET</code> endpoints</h3>
+
+<h4 id="apiquotes"><code class="highlighter-rouge">api/quotes</code></h4>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quotesData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The expert at anything was once a beginner."</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Helen Hayes"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"education"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If you want something you never had, you have to do something you've never done!"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unknown"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"motivational"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">/*</span><span class="w"> </span><span class="err">additional</span><span class="w"> </span><span class="err">quotes</span><span class="w"> </span><span class="err">*/</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="apiquotesid"><code class="highlighter-rouge">api/quotes/:id</code></h4>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"quote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tim Berners-Lee"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"philosophical"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="apicategories"><code class="highlighter-rouge">api/categories</code></h4>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"categoriesData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"motivational"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"num_quotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"philosophical"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"num_quotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"education"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"num_quotes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">/*</span><span class="w"> </span><span class="err">additional</span><span class="w"> </span><span class="err">genres</span><span class="w"> </span><span class="err">*/</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h4 id="apicategoriesid"><code class="highlighter-rouge">api/categories/:id</code></h4>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Who are we, who is each one of us, if not a combinatoria of experiences, information, books we have read, things imagined?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Italo Calvino"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"literary"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In search of the difficulty rather than in its clutch. The disquiet of him who lacks an adversary."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Samuel Beckett"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"genre_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"literary"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="other-endpoints">Other Endpoints</h3>
+
+<h4 id="post-to-apiquotes">POST to <code class="highlighter-rouge">api/quotes</code></h4>
+
+<p>Adds a quote to the database. Request body must include <snip>content</snip>, <snip>author</snip>, and <snip>genre_id</snip> properties.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://ada-api.herokuapp.com/api/quotes'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="na">content</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+    <span class="na">author</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">author</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+    <span class="na">genre_id</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">genre_id</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+  <span class="p">}),</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+
+<h4 id="put-to-apiquotesid">PUT to <code class="highlighter-rouge">api/quotes/:id</code></h4>
+
+<p>Modify a quote’s information in the database.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// where ID is the quote's ID</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="err">`</span><span class="nx">https</span><span class="err">:</span><span class="c1">//ada-api.herokuapp.com/api/quotes/${id}`, {</span>
+  <span class="nl">method</span><span class="p">:</span> <span class="s1">'PUT'</span><span class="p">,</span>
+  <span class="nx">headers</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="err">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">body</span><span class="err">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+    <span class="na">content</span><span class="p">:</span> <span class="s1">'quote content here'</span><span class="p">,</span>
+    <span class="na">author</span><span class="p">:</span> <span class="s1">'quote author here'</span><span class="p">,</span>
+    <span class="na">genre_id</span><span class="p">:</span> <span class="mi">3</span> <span class="c1">// the genre ID must be a number</span>
+  <span class="p">}),</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+
+<h4 id="delete-to-apiquotesid">DELETE to <code class="highlighter-rouge">api/quotes/:id</code></h4>
+
+<p>Remove a quote from the database.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// where ID is the quote's ID</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="err">`</span><span class="nx">https</span><span class="err">:</span><span class="c1">//ada-api.herokuapp.com/api/quotes/${id}`, {</span>
+  <span class="nl">method</span><span class="p">:</span> <span class="s1">'DELETE'</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+
+  </div>
+
+</article>
+      </div>
+    </main>
+</body>
+</html>
