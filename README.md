@@ -4,6 +4,8 @@ This is a REST-ful API that serves the favorite quotes of WDI Ada, a General Ass
 
 No keys are needed to access this API.
 
+(Note: This is being used for student exercises & so on, so there may be some... unusual... quotes in the database from time to time.)
+
 ## Endpoints
 
 The API has two main endpoints: `/api/quotes` and `/api/categories`. Here are some sample calls from each and their responses.
